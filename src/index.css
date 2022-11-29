@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  background-color: #1a1a1a;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+@font-face {
+  font-family: "CascadiaCode";
+  src: url("/fonts/CascadiaCode.woff2") format("woff2"),
+    url("/fonts/CascadiaCode.ttf") format("truetype"),
+    url("/fonts/CascadiaCodeItalic.woff2") format("woff2"),
+    url("/fonts/CascadiaCodeItalic.ttf") format("woff2");
+}
+
+body {
+  font-family: "CascadiaCode";
+  font-weight: lighter;
+  color: white;
+  font-size: 1rem;
+}
+
+.user-input {
+  position: relative;
+  color:rgb(230, 231, 206); 
+}
+
+.user-input::after {
+  content: "";
+  width: 10px;
+  height: 20px;
+  background: rgba(185, 179, 120, 0.842);
+  position: absolute;
+  top: 2px;
+  animation: blink 1.5s linear infinite;
+  @apply ease-in-out;
+}
+
+#TerminalWrapper input {
+  border: none;
+  outline: none;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  color:rgb(230, 231, 206, 0); 
+}
+
+#TerminalOutput {
+  color:rgb(206, 206, 178);
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+#HeaderTextMichael {
+  color: rgb(248, 248, 234);
+  text-shadow: 0 0 5px #f8e4bf;
+  /* animation: blink 3s linear infinite;
+  @apply ease-in-out; */
+}
+
+#HeaderTextTerminal {
+  color: rgb(235, 91, 91);
+  padding-left: 18rem;
+  top: 160px;
+  @apply -rotate-3;
+  text-shadow: 0 0 1px #7a1919;
+  /* animation: blinkHarder 3s linear infinite;
+  @apply ease-in-out; */
+}
+
+.MichaelParent div {
+  margin-bottom: -5px;
+}
+
+.TerminalParent div {
+  margin-bottom: -5px;
+  letter-spacing: -0.75px;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 65%;
+  }
+
+  0%,
+  100% {
+    text-shadow: 0 0 5px #f8e4bf, 0 0 15px #f5deb2, 0 0 20px #e5ca97,
+      0 0 40px #f7d18c, 0 0 60px #fa6b6b, 0 0 10px #f0bb7b, 0 0 98px #fd6868;
+    color: #e9e6c9;
+  }
+}
+
+@keyframes blinkHarder {
+  20%,
+  40%,
+  60%,
+  80%,
+  100% {
+    color: rgb(218, 54, 54);
+    text-shadow: 0 0 1px #f17556;
+  }
+
+  0%,
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+  text-shadow: 0 0 2px #f17556, 0 0 2px #d13f3f, 0 0 7px #db2d2d,  0 0 2px #ff0000, 0 0 1px #cc2929, 0 0 5px #a32d2d, 0 0 2px #e05151, 0 0 10px #aa1111, 0 2px #e72525;
+    color: #eb5858;
+  }
+}
