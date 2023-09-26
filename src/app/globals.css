@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "CascadiaCode";
+  src: url("/fonts/CascadiaCode.woff2") format("woff2"),
+    url("/fonts/CascadiaCode.ttf") format("truetype"),
+    url("/fonts/CascadiaCodeItalic.woff2") format("woff2"),
+    url("/fonts/CascadiaCodeItalic.ttf") format("woff2");
+}
+
+body {
+  font-family: "CascadiaCode";
+  font-weight: lighter;
+  color: white;
+  font-size: 1rem;
+}
+
+.user-input {
+  position: relative;
+  color: rgb(244, 245, 240);
+}
+
+.user-input::after {
+  content: "";
+  width: 8px;
+  height: 20px;
+  background: rgba(217, 217, 217, 0.842);
+  position: absolute;
+  top: 1px;
+  animation: blink 1.5s linear infinite;
+  @apply ease-in-out;
+}
+
+#terminal input {
+  border: none;
+  outline: none;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  color: rgb(230, 231, 206, 0);
+}
+
+#terminal-output {
+  color: rgba(255, 255, 253, 0.842);
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
